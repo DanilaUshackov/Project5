@@ -67,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------*/
 
 .header {
+  position: fixed;
   height: 93px;
   width: 100%;
   padding-top: 22px;
@@ -110,6 +111,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 900px){ 
+    .header {
+      position: fixed;
+    }
     body.lock {
       overflow: hidden;
     }
