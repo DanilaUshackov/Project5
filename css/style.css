@@ -68,7 +68,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .header {
   height: 93px;
+  width: 100%;
   padding-top: 22px;
+  z-index: 50;
+  background-color: #fff;
 }
 
 .container {
@@ -80,6 +83,15 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.logo {
+  padding-left: 20px;
+  z-index: 3;
+}
+
+.menu__burger {
+  display: none;
 }
 
 .menu__items {
@@ -96,6 +108,80 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 12px;
   padding-bottom: 12px;
 }
+
+@media screen and (max-width: 900px){ 
+    body.lock {
+      overflow: hidden;
+    }
+    .menu__burger {
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 20px;
+      z-index: 3;
+      margin-right: 20px;
+    }
+    .menu__burger span{
+      position: absolute;
+      background-color: #868686;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      top: 9px;
+      transition: all 0.3s ease 0s;
+    }
+    .menu__burger:before,
+    .menu__burger:after{
+      content: "";
+      background-color: #868686;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      transition: all 0.3s ease 0s;
+    }
+    .menu__burger:before{
+      top: 0;
+    }
+    .menu__burger:after{
+      bottom: 0;
+    }
+
+    .menu__burger.active:before{
+      transform: rotate(45deg);
+      top: 9px;
+    }
+    .menu__burger.active:after{
+      transform: rotate(-45deg);
+      bottom: 9px;
+    }
+
+    .menu__burger.active span{
+      transform: scale(0);
+    }
+
+    .menu__list {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #fff;
+      padding: 70px 0 0 0;
+      transition: all 0.3s ease 0s;
+    }
+      
+    .menu__list.active {
+      top: 0;
+    }  
+
+    .menu__items {
+      display: block;
+      text-align: center;
+    }
+  }
+
 
 .menu__items li:hover{
   color: #fff;
@@ -527,6 +613,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .basic__button {
+  border-radius: 2px;
   width: 132px;
   height: 43px;
   background-color: #ffbb42;
@@ -637,6 +724,7 @@ h1, h2, h3, h4, h5, h6 {
   } 
 
 .premium__button {
+  border-radius: 2px;
   width: 132px;
   height: 43px;
   background-color: #ffbb42;
@@ -716,6 +804,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gold__button {
+  border-radius: 2px;
   width: 132px;
   height: 43px;
   background-color: #ffbb42;
@@ -839,6 +928,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button__works {
+  border-radius: 2px;
   width: 166px;
   height: 47px;
   background-color: #ffbb42;
@@ -856,3 +946,221 @@ h1, h2, h3, h4, h5, h6 {
     }
     
   } 
+
+.clients {
+  background-color: #FFC155;
+}
+
+.clients__title {
+  padding-top: 142px;
+  color: #fff;
+  font-family: "Gotham Black";
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -0.75px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.clients__subtitle {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 22px;
+  font-family: "Lato Light";
+  text-align: center;
+  padding-bottom: 110px;
+}
+
+.clients__row {
+  display: flex;
+  justify-content:space-between;
+  padding-bottom: 140px;
+}
+
+@media screen and (max-width: 1170px){
+    .clients__row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+  } 
+
+.clients__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.clients__card {
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  width: 567px;
+  height: 241px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding-top: 43px;
+}
+
+.foto {
+  width: 121px;
+  height: 121px;
+  border-radius: 50%;
+}
+
+.card__text {
+  padding-left: 31px;
+}
+
+.card__quote {
+  max-width: 358px;
+  color:#7B7B7B;
+  font-size:13px;
+  font-family: "Open Sans";
+  line-height: 22px;
+  margin-bottom: 14px;
+}
+
+.card__mane {
+  font-family: "Lato";
+  color:#99a9ae;
+  font-size:14px;
+  text-transform: uppercase;
+}
+
+.card__mane span{
+  color: #f78948;
+}
+
+.maps {
+  height: 945px;
+}
+
+.maps__title {
+  padding-top: 155px;
+  color: #394b50;
+  font-family: "Gotham Black";
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -0.75px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.maps__subtitle {
+  color: #75888d;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 22px;
+  font-family: "Lato Light";
+  text-align: center;
+  padding-bottom: 38px;
+}
+
+.maps__form {
+  display: flex;
+  justify-content: center;
+}
+
+.form__name {
+  padding-left: 43px;
+  margin: 0 5px;
+  border: 1px solid #cbcbcb;
+  border-radius: 2px;
+  width: 308px;
+  height: 47px;
+  color: #a9a9a9;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: 400;
+  background: #fff url('../img/Full name.png') 15px center no-repeat;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+  color: #a9a9a9;
+}
+:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #a9a9a9;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #a9a9a9;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #a9a9a9;;
+  opacity: 1;
+}
+
+.form__address {
+  padding-left: 43px;
+  margin: 0 5px;
+  border: 1px solid #cbcbcb;
+  border-radius: 2px;
+  width: 388px;
+  height: 47px;
+  color: #a9a9a9;
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: 400;
+  background: #fff url('../img/Email address.png') 15px center no-repeat;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+  color: #a9a9a9;
+}
+:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #a9a9a9;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #a9a9a9;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #a9a9a9;;
+  opacity: 1;
+}
+
+.form__button {
+  margin: 0 5px;
+  border-radius: 2px;
+  width: 218px;
+  height: 47px;
+  background-color: #ffbb42;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.maps__map {
+  margin: 0 auto;
+  padding-top: 53px;
+}
+
+.big__map {
+  padding: 0 31.5px;
+  position: absolute;
+  z-index: 10;
+}
+
+.marker__map {
+  margin-top: 40px;
+  padding: 0 443px;
+  position: absolute;
+  z-index: 15;
+}
+
+.icon__map {
+  margin-top: 338px;
+  padding: 0 557.5px;
+  position: absolute;
+  z-index: 15;
+}
